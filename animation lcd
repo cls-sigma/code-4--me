@@ -1,0 +1,60 @@
+#include <LiquidCrystal_I2C.h>     // Bibliothèque de l'ecran lcd
+LiquidCrystal_I2C lcd(0x27, 20, 4);      // Definition des parametres de l'ecran lcd
+
+void setup() 
+{
+ lcd.init(); // initialisation de l'afficheur
+lcd.backlight(); // active le rétro-éclairage
+  
+lcd.setCursor(0,0);
+
+lcd.print("College Sigma");
+delay(2000);
+
+lcd.clear();
+lcd.setCursor(1,0);
+lcd.print("bonjour arduino");
+}
+
+
+void loop() {
+
+//Faire clignoter l'affichage de l'écran
+ 
+lcd.display();
+delay(500);
+lcd.noDisplay();
+delay(500);
+lcd.display();
+delay(500);
+
+int pos=0;
+
+
+//Faire défiler vers la  droite
+lcd.scrollDisplayRight();
+delay(500); 
+for (pos = 0; pos <= 14; pos += 1) { 
+    lcd.scrollDisplayRight();
+delay(500);                       
+  }
+
+  lcd.clear();
+lcd.setCursor(1,0);
+lcd.print("bonjour arduino");
+
+//Faire défiler vers la  gauche
+  for (pos = 0; pos <= 14; pos += 1) { 
+    lcd.scrollDisplayLeft();
+delay(500);                       
+  }
+
+
+//Faire Clignoter le cursuer
+
+lcd.cursor();
+delay(400);
+lcd.noCursor();
+delay(400);
+
+}
