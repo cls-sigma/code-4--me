@@ -28,7 +28,7 @@ delay(500);
 lcd.display();
 delay(500);
 
-int pos=0;
+ /*int pos=0;
 
 
 //Faire défiler vers la  droite
@@ -56,5 +56,6 @@ lcd.cursor();
 delay(400);
 lcd.noCursor();
 delay(400);
+*/
 
 }
