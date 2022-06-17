@@ -1,12 +1,10 @@
-
-
 #include <LiquidCrystal_I2C.h> //Bibliothèque pour l'écran lcd
 #include "DHT.h" //Bibliothèque pour le capteur de température et humidité
 
 #define DHTPIN 2 //Broche de sortie du capteur
 #define DHTTYPE DHT11 // Type de capteur; ici DHT11
 
-LiquidCrystal_I2C lcd(0x24, 20, 4);  //Definition des parametres du lcd
+LiquidCrystal_I2C lcd(0x27,20,4); //Definition des parametres du lcd
 
 DHT dht(DHTPIN, DHTTYPE); // Creation de la fonction dth pour le capteur
 
@@ -18,7 +16,7 @@ Serial.begin(9600); //Initialisation du port serie
   lcd.backlight(); // Allumage du rectro-éclairage
   lcd.setCursor(0, 0); //Poitionnement du curseur
   
-  lcd.print("Station Meteo");
+  lcd.print("Meteo a Sigma");
   delay(2000);
 }
 
